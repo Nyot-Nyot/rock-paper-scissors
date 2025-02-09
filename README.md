@@ -19,7 +19,7 @@ You can play the game here: **[GitHub Pages Link](https://nyot-nyot.github.io/ro
 ## 🔧 Installation (Run Locally)  
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/username/rock-paper-scissors.git
+   git clone https://github.com/nyot-nyot/rock-paper-scissors.git
    cd rock-paper-scissors
    ```
 2. Open `index.html` in your browser.  

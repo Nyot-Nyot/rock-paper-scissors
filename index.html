@@ -3,9 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com;">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link rel="stylesheet" href="styles.css" />
-		<title>Document</title>
+		<title>Rock Paper Scissors</title>
 	</head>
 	<body>
 		<div class="header">
@@ -16,23 +18,25 @@
 			</div>
 		</div>
 
-		<div class="container">
-			<div class="card">
-				<img src="assets/Hand-Rock.svg" alt="rock">
-				<p>Rock</p>
+		<div class="main">
+			<div class="container">
+				<div class="card">
+					<img src="assets/Hand-Rock.svg" alt="rock">
+					<p>Rock</p>
+				</div>
+		
+				<div class="card">
+					<img src="assets/Hand.svg" alt="paper">
+					<p>Paper</p>
+				</div>
+		
+				<div class="card">
+					<img src="assets/Hand-Scissors.svg" alt="scissors">
+					<p>Scissors</p>
+				</div>
 			</div>
 	
-			<div class="card">
-				<img src="assets/Hand.svg" alt="paper">
-				<p>Paper</p>
-			</div>
-	
-			<div class="card">
-				<img src="assets/Hand-Scissors.svg" alt="scissors">
-				<p>Scissors</p>
-			</div>
+			<script src="script.js"></script>
 		</div>
-
-		<script src="script.js"></script>
 	</body>
 </html>

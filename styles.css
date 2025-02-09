@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:700|Roboto:400');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Roboto';
+  font-family: 'Roboto', 'sans-serif';
   font-weight: 700;
 }
 
@@ -51,7 +51,6 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 5px 110px;
-    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .card {
@@ -62,7 +61,7 @@ button {
     gap: 16px;
     padding: 16px;
     border-radius: 5px;
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .card img {
@@ -72,10 +71,23 @@ button {
     background-color: #001220;
 }
 
+.card p {
+    font-weight: 500;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     gap: 40px;
+}
+
+.main {
+    background-image: url(assets/layered-waves-haikei.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+    overflow: hidden;
 }
