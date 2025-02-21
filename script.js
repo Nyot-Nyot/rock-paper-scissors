@@ -15,12 +15,7 @@ function getComputerChoice() {
 
 function getPlayerChoice(event) {
     const card = event.target.closest(".card");
-
-    if (card) {
-        return card.getAttribute("data-choice");
-    }
-
-    return null;
+    return card ? card.getAttribute("data-choice") : null;
 }
 
 function playRound(playerChoice, computerChoice) {
@@ -41,7 +36,7 @@ function playRound(playerChoice, computerChoice) {
     return "You lose!";
 }
 
-function updateScore() {
+function updateScoreDisplay() {
     const scoreDisplay = document.querySelector(".score");
     scoreDisplay.textContent = `Score: ${humanScore}/5`;
 }
@@ -49,7 +44,7 @@ function updateScore() {
 function resetGame() {
     humanScore = 0;
     computerScore = 0;
-    updateScore();
+    updateScoreDisplay();
 }
 
 function playGame(event) {
@@ -61,10 +56,10 @@ function playGame(event) {
 
     alert(`You chose ${playerChoice}. Computer chose ${computerChoice}. ${result}`);
     
-    updateScore();
+    updateScoreDisplay();
 
     if (humanScore >= 5 || computerScore >= 5) {
-        const finalResult = humanScore >= 5 ? "You win!" : "You lose!";
+        const finalResult = humanScore >= 5 ? "Congratulations! You win!" : "Sorry! You lose!";
         alert(finalResult);
         resetGame();
     }
