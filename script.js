@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3);
     switch (choice) {
@@ -20,9 +23,6 @@ function getPlayerChoice(event) {
     return null;
 }
 
-let humanScore = 0;
-let computerScore = 0;
-
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return "It's a tie!";
@@ -40,3 +40,38 @@ function playRound(playerChoice, computerChoice) {
     computerScore++;
     return "You lose!";
 }
+
+function updateScore() {
+    const scoreDisplay = document.querySelector(".score");
+    scoreDisplay.textContent = `Score: ${humanScore}/5`;
+}
+
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    updateScore();
+}
+
+function playGame(event) {
+    const playerChoice = getPlayerChoice(event);
+    if (!playerChoice) return;
+
+    const computerChoice = getComputerChoice();
+    const result = playRound(playerChoice, computerChoice);
+
+    alert(`You chose ${playerChoice}. Computer chose ${computerChoice}. ${result}`);
+    
+    updateScore();
+
+    if (humanScore >= 5 || computerScore >= 5) {
+        const finalResult = humanScore >= 5 ? "You win!" : "You lose!";
+        alert(finalResult);
+        resetGame();
+    }
+}
+
+const cards = document.querySelectorAll(".card");
+cards.forEach(card => card.addEventListener("click", playGame));
+
+const newGameButton = document.querySelector("button");
+newGameButton.addEventListener("click", resetGame);
